@@ -1,0 +1,204 @@
+{
+  "meta": {
+    "purpose": "HTML 调研报告版式随机轮换库",
+    "hard_rules": [
+      "全部浅色主题（暗色系已剔除，永不入选）",
+      "单文件、零外部依赖（不引外部字体/JS/CSS）",
+      "内容骨架恒定：导读+阅读路径 / 每章「本章回答什么·读完你会知道」导语 / 章末三句话 / 事实与推断分开标注 / 信源清单含日期口径",
+      "不加个人署名、水印、落款等元数据，除非用户明确要求",
+      "数据正确性优先于装饰：图表数字必须与内容一致"
+    ]
+  },
+  "styles": [
+    {
+      "id": "default-light",
+      "name": "默认白底蓝字卡片风",
+      "used": true,
+      "tokens": {
+        "bg": "#f7f8fa", "card": "#ffffff", "ink": "#1f2329", "ink2": "#57606a",
+        "accent": "#2563eb", "line": "#e4e7ec",
+        "font_heading": "sans-serif 粗体", "font_body": "-apple-system/PingFang SC",
+        "components": "白卡片+细边框圆角、蓝色左边框章节标题、KPI 卡片、表格细线"
+      }
+    },
+    {
+      "id": "finance-editorial",
+      "name": "财经编辑风",
+      "used": true,
+      "tokens": {
+        "bg": "#f6f4ef", "paper2": "#efede6", "ink": "#1c1a16", "accent": "#b5351c",
+        "font_heading": "Noto Serif SC/Songti 900", "font_body": "PingFang SC", "font_num": "ui-monospace",
+        "components": "报头 masthead（顶部日期条+kicker+大衬线标题）、去卡片化细线分区、粗黑规则线、数字墙、引言块、财报式表格（黑细规则线）、章节大号衬线编号"
+      }
+    },
+    {
+      "id": "kawaii",
+      "name": "卡通可爱风",
+      "used": true,
+      "tokens": {
+        "bg": "#fff9f0 波点纹理", "ink": "#4a403a",
+        "palette": ["#ffb5a7", "#a8e6cf", "#a8d8ea", "#d9c2f0", "#ffe08a", "#ffc7de"],
+        "accent": "#f4796b",
+        "font_heading": "Yuanti SC 圆体 800",
+        "components": "贴纸卡片（粗描边2.5px+硬阴影4px偏移）、药丸目录、彩色圆形章节徽章、SVG 吉祥物、气泡引言块、便利贴结论（歪斜+胶带）、圆点虚线时间轴、对话气泡总结、适度 emoji"
+      }
+    },
+    {
+      "id": "swiss-grid",
+      "name": "瑞士网格 / 国际主义",
+      "used": false,
+      "tokens": {
+        "bg": "#ffffff", "ink": "#111111", "accent": "#e63329（经典瑞士红，可换 #0f4bdb）",
+        "grid": "12列栅格，模块严格对齐，大量留白",
+        "font_heading": "Helvetica/PingFang Heavy", "font_body": "无衬线",
+        "components": "无装饰、无圆角、无阴影；红色仅用于编号/关键数字/下划线；不对称版式；超大号数字；表格只用横线"
+      }
+    },
+    {
+      "id": "terminal-mono",
+      "name": "终端 monospace 风（浅色）",
+      "used": false,
+      "tokens": {
+        "bg": "#fafaf7", "ink": "#2a2a2a", "accent": "#0a7d3b（绿）或 #b45309（琥珀）",
+        "font": "全篇 ui-monospace/SF Mono/Menlo",
+        "components": "$ 提示符式标题（$ section-01）、ASCII/box-drawing 分割线（───）、[OK]/[WARN]/[DATA] 前缀标签、表格用 box-drawing 字符、代码块式引用、光标闪烁装饰可用 CSS 模拟；无圆角无阴影"
+      }
+    },
+    {
+      "id": "bento",
+      "name": "Bento 便当格",
+      "used": false,
+      "tokens": {
+        "bg": "#f2f2f4", "ink": "#1a1a1e", "accent": "#0071e3（iOS 蓝）",
+        "grid": "CSS grid，2-4列不等高模块，gap 12-16px，圆角 20-24px",
+        "font_heading": "SF Pro/PingFang 700", "font_body": "sans",
+        "components": "每格白底圆角大卡自成一体、大小穿插（1x1/2x1/2x2）、大数字+小标签、渐变强调格点缀、图标大而少"
+      }
+    },
+    {
+      "id": "editorial-magazine",
+      "name": "杂志双栏",
+      "used": false,
+      "tokens": {
+        "bg": "#fffdf8", "ink": "#26221d", "accent": "#8c2f1b",
+        "font_heading": "Songti/Serif 900 特大", "font_body": "serif（宋体系）",
+        "components": "双栏正文（column-count:2）、首字下沉、栏间细线、页边注（章节问题放 margin）、大图跨栏（SVG 图表）、小号全大写栏目标签"
+      }
+    },
+    {
+      "id": "blueprint",
+      "name": "蓝图 / 工程制图风（浅色）",
+      "used": false,
+      "tokens": {
+        "bg": "#f8fafc+浅蓝网格底纹", "ink": "#1e3a5f", "accent": "#c2410c",
+        "font": "mono 标注 + sans 正文",
+        "components": "所有区块带图框+角标编号（FIG.01）、虚线标注线+尺寸箭头、右上角图签栏（标题/日期/版本/比例）、表格像 BOM 清单、SVG 图表带坐标系刻度"
+      }
+    },
+    {
+      "id": "latex-academic",
+      "name": "学术论文 / LaTeX 风",
+      "used": false,
+      "tokens": {
+        "bg": "#ffffff", "ink": "#000000",
+        "font": "Times New Roman/STSong，标题小型大写",
+        "components": "编号章节（§1 §1.1）、脚注式引用[1]、摘要框（Abstract）、图表带 Caption「表1：」「图1：」、双栏可选、纯黑白灰、定理/引理式高亮框做结论"
+      }
+    },
+    {
+      "id": "newspaper-broadsheet",
+      "name": "报纸大版式",
+      "used": false,
+      "tokens": {
+        "bg": "#fdfcf7", "ink": "#141210",
+        "font_heading": "衬线特紧凑", "font_body": "serif 小字号",
+        "components": "报眉+多栏密排（3-4栏）、细分割线密布、头条特大号+次要新闻小号的不对称层级、手写体刊头装饰、日期刊号行"
+      }
+    },
+    {
+      "id": "glassmorphism",
+      "name": "玻璃拟态（浅色）",
+      "used": false,
+      "tokens": {
+        "bg": "浅色渐变+彩色模糊光斑（#ffd9d0/#c7e8ff/#e3d4ff 布洛布）",
+        "card": "rgba(255,255,255,.55)+backdrop-filter:blur(18px)+1px 白描边",
+        "ink": "#2b2b33", "accent": "#6c5ce7",
+        "components": "悬浮玻璃卡片层叠、发光渐变文字点缀、大圆角、轻投影"
+      }
+    },
+    {
+      "id": "neumorphism",
+      "name": "新拟物",
+      "used": false,
+      "tokens": {
+        "bg": "#e8ebf2（单一浅灰蓝）", "ink": "#3d4351", "accent": "#5b6bd6",
+        "components": "同色软凸（box-shadow 双向浅白/浅灰）、圆形图标按钮、无硬边无描边、凹槽输入式表格头；内容密度不宜过高"
+      }
+    },
+    {
+      "id": "pixel-8bit",
+      "name": "像素 8-bit 风",
+      "used": false,
+      "tokens": {
+        "bg": "#f4f0e6", "ink": "#2c2137",
+        "palette": ["#e76254", "#ef8a62", "#f3b05e", "#5aa9a2", "#4a6fa5"],
+        "font_heading": "Zpix/Press Start 类像素字体（无外部字体时用 mono+image-rendering 模拟）",
+        "components": "硬边像素框（border-image 或多层 box-shadow 阶梯）、游戏 UI 元素（血条式进度、★评分、对话框）、雷达图用像素阶梯 SVG"
+      }
+    },
+    {
+      "id": "memphis",
+      "name": "孟菲斯 Memphis",
+      "used": false,
+      "tokens": {
+        "bg": "#fdf6ee", "ink": "#222",
+        "palette": ["#ff6b6b", "#ffd93d", "#6bcb77", "#4d96ff", "#c084fc"],
+        "components": "几何碎形装饰（圆点/波浪线/三角/之字 SVG 散布）、粗黑描边+彩色填充块、故意错位旋转、无衬线粗黑标题、色块拼接章节头"
+      }
+    },
+    {
+      "id": "bauhaus",
+      "name": "包豪斯",
+      "used": false,
+      "tokens": {
+        "bg": "#f5f2ea", "ink": "#141414",
+        "palette": ["#d02f2f 红", "#1c4fb8 蓝", "#f0c417 黄", "#141414 黑"],
+        "font_heading": "无衬线 Heavy 全大写",
+        "components": "圆/半圆/三角/方几何构图章节封面、三原色大色块、严格水平垂直、细十字准线装饰、无渐变无阴影"
+      }
+    },
+    {
+      "id": "letterpress",
+      "name": "铅字印刷",
+      "used": false,
+      "tokens": {
+        "bg": "#faf6ee+纸纹（CSS 渐变模拟）", "ink": "#2b2620",
+        "font_heading": "宋体/衬线，首字母花体装饰",
+        "components": "章节首装饰花体首字母（dropcap）、双细线框、油墨不均感（text-shadow 微糊）、页码式章节尾注、ornament 分隔符 ❦ ⁂"
+      }
+    },
+    {
+      "id": "journal-handbook",
+      "name": "手账 / 期刊风",
+      "used": false,
+      "tokens": {
+        "bg": "横线纸/方格纸底纹（repeating-linear-gradient）",
+        "ink": "#3f3a33", "accent": "#e8604c",
+        "components": "胶带贴角（rotate 半透明色块）、手写体标题（无外部字体时用圆体+倾斜模拟）、涂鸦箭头/圈划 SVG、撕纸边（锯齿 clip-path）、便签夹子装饰"
+      }
+    },
+    {
+      "id": "notion-doc",
+      "name": "Notion 文档风",
+      "used": false,
+      "tokens": {
+        "bg": "#ffffff", "ink": "#37352f", "ink2": "#9b9a97", "accent": "#2383e2",
+        "components": "左侧页签目录（sticky）、emoji 页面图标、toggle 折叠块（details/summary）、callout 块（灰底圆角+图标）、轻量分割线、数据库式表格（低饱和表头）"
+      }
+    }
+  ],
+  "excluded_dark": [
+    {"id": "cyberpunk-neon", "name": "赛博朋克霓虹", "reason": "暗色系，默认排除"},
+    {"id": "chalkboard", "name": "黑板粉笔", "reason": "暗色系，默认排除"}
+  ]
+}
